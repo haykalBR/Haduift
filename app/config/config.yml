@@ -37,6 +37,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes: ['bootstrap_4_horizontal_layout.html.twig']
+
 
 # Doctrine Configuration
 doctrine:
@@ -79,3 +81,11 @@ fos_user:
     from_email:
         address: "test@gmail.com"
         sender_name: "test"
+services:
+    fos_user.security.controller:
+      class: AppBundle\Controller\SecurityController
+    fos_user.profile.controller:
+      class: AppBundle\Controller\ProfileController
+      arguments: ['@fos_user.user_manager']
+    fos_user.registration.controller:
+      class: AppBundle\Controller\RegistrationController

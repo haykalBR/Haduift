@@ -3,9 +3,12 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Servers;
+use phpseclib\Net\SSH2;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Server controller.
@@ -110,5 +113,23 @@ class ServersController extends Controller
 
 
     }
+    /**
+     * Deletes a user entity.
+     *
+     * @Route("/restart/{id}", name="servers_restart",options={"expose"=true})
+     */
+    public function RestartServer (Servers $servers)
+    {
+        $connection = new SSH2($servers->getIp(), $servers->getSshPort());
+        try {
+            $connection->login($servers->getSshUser(), $servers->getSshPassword());
+        } catch (\Exception $e) {
+            //echo $e->getMessage();
+        }
+        if ($connection->isConnected()) {
+            $connection->exec('sudo shutdown -r now  ');
 
+        }
+      return new JsonResponse('ok');
+    }
 }

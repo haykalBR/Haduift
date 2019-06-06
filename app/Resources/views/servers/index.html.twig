@@ -26,6 +26,7 @@
                             <td>
                                 <a href="{{ path('servers_delete', { 'id': server.id }) }} " class="btn btn-danger">Delete</a>
                                 <a href="{{ path('servers_edit', { 'id': server.id }) }}" class="btn btn-warning">Edit</a>
+                                <button class="btn btn-warning restart"  data-id="{{  server.id  }}">Restart</button>
                             </td>
                         </tr>
                     {% endfor %}
@@ -34,4 +35,28 @@
             </div>
         </div>
     </div>
-{% endblock %}
+
+
+    {% endblock %}
+   {% block javascripts %}
+       <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+       <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+<script>
+    $( document ).ready(function() {
+        $(".restart").click(function () {
+            var id = $(this).attr("data-id");
+            // function
+            $.ajax({
+                type: 'GET',
+                url: Routing.generate('servers_restart',{'id' : id}),
+                success:function(data){
+
+                },
+
+            })
+
+
+        })
+    });
+</script>
+    {% endblock %}

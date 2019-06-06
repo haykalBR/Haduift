@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<style>
+ .app-sidebar__user-avatar{
+     width: 60px;
+ }
+</style>
     <head>
         <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
         <!-- Twitter meta-->
@@ -92,7 +97,12 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+        <div class="app-sidebar__user">
+            {% if app.user.image == null %}
+            <img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+              {% else %}
+            <img class="app-sidebar__user-avatar" src="{{ asset('uploads/user/image/' ~app.user.id ~'/' ~ app.user.image)}}" alt="User Image" >
+             {% endif %}
             <div>
                 <p class="app-sidebar__user-name">{{ app.user.firstName }}  {{ app.user.lastName }} </p>
                 <p class="app-sidebar__user-designation">Frontend Developer</p>

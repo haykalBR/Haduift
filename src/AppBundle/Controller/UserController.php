@@ -48,9 +48,8 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('users_show', array('id' => $user->getId()));
+            return $this->redirectToRoute('users_index');
         }
-
         return $this->render('user/new.html.twig', array(
             'user' => $user,
             'form' => $form->createView(),
@@ -88,7 +87,7 @@ class UserController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('users_edit', array('id' => $user->getId()));
+            return $this->redirectToRoute('users_index');
         }
 
         return $this->render('user/edit.html.twig', array(
@@ -101,36 +100,15 @@ class UserController extends Controller
     /**
      * Deletes a user entity.
      *
-     * @Route("/{id}", name="users_delete")
-     * @Method("DELETE")
+     * @Route("/delete/{id}", name="users_delete")
      */
     public function deleteAction(Request $request, User $user)
     {
-        $form = $this->createDeleteForm($user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($user);
             $em->flush();
-        }
-
         return $this->redirectToRoute('users_index');
     }
 
-    /**
-     * Creates a form to delete a user entity.
-     *
-     * @param User $user The user entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(User $user)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('users_delete', array('id' => $user->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
+
 }

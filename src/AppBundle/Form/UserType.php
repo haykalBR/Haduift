@@ -25,7 +25,7 @@ class UserType extends AbstractType
             ->add('username')
             ->add('email')
             ->add('enabled')
-
+            ->add('imageFile')
             ->add('plainPassword', RepeatedType::class, [
                 'required' => true,
                 'type' => PasswordType::class,

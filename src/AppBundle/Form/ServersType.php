@@ -32,6 +32,7 @@ class ServersType extends AbstractType
                     return ServerTypeEnum::getTypeName($choice);
                 },
             ])
+                 ->add('link')
                  ->add('ip')
                  ->add('sshUser')
                  ->add('sshPassword', PasswordType::class)

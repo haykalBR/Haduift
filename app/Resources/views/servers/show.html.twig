@@ -1,48 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Server</h1>
+    <style>
+       .all{
+          width: 100%;
+          height: 300%;
+       }
+    </style>
+    {% set var="http://"~server.ip~server.link %}
+   <iframe src="{{ var }}" width="1000" height="800">
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ server.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ server.name }}</td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>{{ server.type }}</td>
-            </tr>
-            <tr>
-                <th>Sshuser</th>
-                <td>{{ server.sshUser }}</td>
-            </tr>
-            <tr>
-                <th>Sshpassword</th>
-                <td>{{ server.sshPassword }}</td>
-            </tr>
-            <tr>
-                <th>Sshport</th>
-                <td>{{ server.sshPort }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('servers_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('servers_edit', { 'id': server.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+   </iframe>
 {% endblock %}

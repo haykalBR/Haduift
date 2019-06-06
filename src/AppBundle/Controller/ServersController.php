@@ -68,11 +68,9 @@ class ServersController extends Controller
      */
     public function showAction(Servers $server)
     {
-        $deleteForm = $this->createDeleteForm($server);
 
         return $this->render('servers/show.html.twig', array(
             'server' => $server,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 

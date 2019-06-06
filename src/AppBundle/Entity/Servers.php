@@ -38,6 +38,13 @@ class Servers
     /**
      * @var string
      *
+     * @ORM\Column(name="link", type="string", length=50)
+     */
+    private $link;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="ip", type="string", length=15)
      */
     private $ip;
@@ -164,6 +171,22 @@ class Servers
     public function setIp($ip)
     {
         $this->ip = $ip;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * @param string $link
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
     }
 
 

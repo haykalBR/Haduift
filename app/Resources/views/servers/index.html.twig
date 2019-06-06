@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-server"></i> List Servers</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for server in servers %}
+                        <tr>
+                            <td>{{ server.id }}</td>
+                            <td>{{ server.name }}</td>
+                            <td>{{ server.type }}</td>
+                            <td>
+                                <a href="{{ path('servers_delete', { 'id': server.id }) }} " class="btn btn-danger">Delete</a>
+                                <a href="{{ path('servers_edit', { 'id': server.id }) }}" class="btn btn-warning">Edit</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

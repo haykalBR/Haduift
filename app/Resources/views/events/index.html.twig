@@ -51,7 +51,8 @@
         $(document).ready(d=function () {
             $("#calendar-holder").fullCalendar({
                 eventClick: function(calEvent, jsEvent, view) {
-                    window.location.href = Routing.generate('events_show', { id: "1"} );
+                    console.log(calEvent)
+                    // window.location.href = Routing.generate('events_show', { id: "1"} );
 
 
                 },

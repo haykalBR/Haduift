@@ -24,14 +24,14 @@ class Events
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="beginDate", type="date")
+     * @ORM\Column(name="beginDate", type="datetime")
      */
     private $beginDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="endDate", type="date")
+     * @ORM\Column(name="endDate", type="datetime")
      */
     private $endDate;
 

@@ -72,11 +72,9 @@ class EventsController extends Controller
      */
     public function showAction(Events $event)
     {
-        $deleteForm = $this->createDeleteForm($event);
 
         return $this->render('events/show.html.twig', array(
             'event' => $event,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -88,7 +86,6 @@ class EventsController extends Controller
      */
     public function editAction(Request $request, Events $event)
     {
-        $deleteForm = $this->createDeleteForm($event);
         $editForm = $this->createForm('AppBundle\Form\EventsType', $event);
         $editForm->handleRequest($request);
 
@@ -101,7 +98,6 @@ class EventsController extends Controller
         return $this->render('events/edit.html.twig', array(
             'event' => $event,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -109,36 +105,16 @@ class EventsController extends Controller
      * Deletes a event entity.
      *
      * @Route("/delete/{id}", name="events_delete")
-     * @Method("DELETE")
      */
     public function deleteAction(Request $request, Events $event)
     {
-        $form = $this->createDeleteForm($event);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($event);
             $em->flush();
-        }
 
         return $this->redirectToRoute('events_index');
-    }
-
-    /**
-     * Creates a form to delete a event entity.
-     *
-     * @param Events $event The event entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Events $event)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('events_delete', array('id' => $event->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
     }
 
 

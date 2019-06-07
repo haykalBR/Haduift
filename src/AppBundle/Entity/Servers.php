@@ -38,7 +38,7 @@ class Servers
     /**
      * @var string
      *
-     * @ORM\Column(name="link", type="string", length=50)
+     * @ORM\Column(name="link", type="string", length=50,nullable=true)
      */
     private $link;
 
@@ -48,6 +48,20 @@ class Servers
      * @ORM\Column(name="ip", type="string", length=15)
      */
     private $ip;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="http", type="string", length=15)
+     */
+    private $http;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="portHttp", type="string", length=15,nullable=true)
+     */
+    private $portHttp;
     /**
      * @var string
      *
@@ -194,6 +208,37 @@ class Servers
         $this->link = $link;
     }
 
+    /**
+     * @return string
+     */
+    public function getHttp()
+    {
+        return $this->http;
+    }
+
+    /**
+     * @param string $http
+     */
+    public function setHttp($http)
+    {
+        $this->http = $http;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPortHttp()
+    {
+        return $this->portHttp;
+    }
+
+    /**
+     * @param string $portHttp
+     */
+    public function setPortHttp($portHttp)
+    {
+        $this->portHttp = $portHttp;
+    }
 
 
 }

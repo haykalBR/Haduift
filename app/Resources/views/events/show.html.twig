@@ -1,36 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Event</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>Dateat</th>
-                <td>{% if event.dateAt %}{{ event.dateAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Action</th>
-                <td>{{ event.action }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('events_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('events_edit', { 'id': event.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-user"></i> Create User</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>{{ event.action }}</th>
+                    </tr>
+                    <tr>
+                        <th>Server</th>
+                        <th>{{ event.servers.name }}</th>
+                    </tr>
+                    <tr>
+                        <th>Date </th>
+                        <th>{{ event.beginDate|date('Y-m-d H:i:s')}}</th>
+                    </tr>
+                    </thead>
+                </table>
+                <a href="{{ path('events_edit', { 'id': event.id }) }}" class="btn btn-warning">Edit Event</a>
+                <a href="{{ path('events_delete', { 'id': event.id }) }}" class="btn btn-danger">Delete Event </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

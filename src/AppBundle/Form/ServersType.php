@@ -36,7 +36,9 @@ class ServersType extends AbstractType
                  ->add('ip')
                  ->add('sshUser')
                  ->add('sshPassword', PasswordType::class)
-                 ->add('sshPort');
+                 ->add('sshPort')
+                 ->add('http')
+                 ->add('portHttp');
     }
 
     /**

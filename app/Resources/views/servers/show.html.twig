@@ -7,9 +7,15 @@
           height: 300%;
        }
     </style>
-    {% set var="http://"~server.ip~server.link %}
-   <iframe src="https://192.168.1.64:9392" width="1000" height="800">
 
+    {% set var= server.http~server.ip%}
+
+    {% if  server.portHttp %}
+        {% set var=var~":"~server.portHttp %}
+    {% endif %}
+    {% if  server.link %}
+        {% set var=var~"/"~server.link %}
+    {% endif %}
+   <iframe src="{{ var }}" width="1000" height="800">
    </iframe>
-
 {% endblock %}

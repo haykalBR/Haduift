@@ -1,7 +1,7 @@
 <?php
 
 namespace AppBundle\Entity;
-use Doctrine\ORM\Mapping\OneToOne;
+use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,13 +29,6 @@ class Events
     private $beginDate;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="endDate", type="datetime")
-     */
-    private $endDate;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="action", type="string", length=255)
@@ -43,7 +36,7 @@ class Events
     private $action;
 
     /**
-     * @OneToOne(targetEntity="Servers")
+     * @ManyToOne(targetEntity="Servers")
      */
     private $servers;
 
@@ -106,21 +99,7 @@ class Events
         $this->beginDate = $beginDate;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->endDate;
-    }
 
-    /**
-     * @param \DateTime $endDate
-     */
-    public function setEndDate($endDate)
-    {
-        $this->endDate = $endDate;
-    }
 
 
 

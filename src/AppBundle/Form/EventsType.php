@@ -15,9 +15,7 @@ class EventsType extends AbstractType
     {
         $builder
             ->add('beginDate')
-            ->add('endDate')
             ->add('action')
-           // ->add('servers')
             ->add('servers', null,[
                 'attr' => ['class' => 'select-2 form-control']
             ])

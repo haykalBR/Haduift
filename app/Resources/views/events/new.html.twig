@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-calendar-o"></i> Create Event</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="Create" class="btn btn-info btn-lg" />
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

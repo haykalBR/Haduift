@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-calendar"></i> List Events</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date AT </th>
+                        <th>Server </th>
+                        <th>Commande </th>
+                        <th>Actions </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for event in events %}
+                        <tr>
+                            <td>{{ event.id }}</td>
+                            <td>{% if event.dateAt %}{{ event.dateAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                            <td>{{ event.servers.name }}</td>
+                            <td>{{ event.action }}</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+   {% block javascripts %}
+       <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+       <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+   {% endblock %}

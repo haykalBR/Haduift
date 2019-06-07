@@ -39,7 +39,17 @@ class Events
      * @ManyToOne(targetEntity="Servers")
      */
     private $servers;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="$status", type="boolean")
+     */
+    private $status;
 
+    public function __construct()
+    {
+        $this->status=false;
+    }
     /**
      * Get id
      *
@@ -97,6 +107,22 @@ class Events
     public function setBeginDate($beginDate)
     {
         $this->beginDate = $beginDate;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param int $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
     }
 
 

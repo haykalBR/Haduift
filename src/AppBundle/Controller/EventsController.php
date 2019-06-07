@@ -67,7 +67,7 @@ class EventsController extends Controller
     /**
      * Finds and displays a event entity.
      *
-     * @Route("/{id}", name="events_show")
+     * @Route("/{id}", name="events_show",options={"expose"=true})
      * @Method("GET")
      */
     public function showAction(Events $event)

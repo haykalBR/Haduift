@@ -31,12 +31,9 @@ class FullCalendarListener
 
     public function loadEvents(CalendarEvent $calendar)
     {
-
         $events=$this->em->getRepository('AppBundle:Events')->findAll();
         foreach ($events as $event){
-
-
-            $event= new Event($event->getAction(),$event->getBeginDate(),$event->getEndDate());
+            $event= new Event($event->getAction().'-'.$event->getId(),$event->getBeginDate(),$event->getEndDate());
             $event->setAllDay(true);
             $calendar->addEvent($event);
 

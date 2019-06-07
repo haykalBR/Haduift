@@ -17,7 +17,25 @@
 
         </div>
     </div>
-
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
    {% block javascripts %}
@@ -28,18 +46,21 @@
        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
        <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+
     <script>
         $(document).ready(d=function () {
             $("#calendar-holder").fullCalendar({
                 eventClick: function(calEvent, jsEvent, view) {
-                   console.log(calEvent)
+                    window.location.href = Routing.generate('events_show', { id: "1"} );
+
 
                 },
 
                 eventSources: [
                     {
                         url: "{{ path('fullcalendar_load_events') }}",
-                        type: "POST",
+                       type: "POST",
+
                         data: {
                             filters: {},
                         },

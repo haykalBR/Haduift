@@ -40,7 +40,7 @@ Class ServerCommand extends ContainerAwareCommand{
                     //echo $e->getMessage();
                 }
                 if ($connection->isConnected()) {
-                    $connection->exec('sudo shutdown -r now  ');
+                    $connection->exec($event->getAction());
 
                 }
                 $event->setStatus(true);

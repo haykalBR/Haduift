@@ -31,6 +31,10 @@
     <script>
         $(document).ready(d=function () {
             $("#calendar-holder").fullCalendar({
+                eventClick: function(calEvent, jsEvent, view) {
+                   console.log(calEvent)
+
+                },
 
                 eventSources: [
                     {
@@ -48,12 +52,25 @@
                     center: "title",
                     left: "prev,next today",
                     right: "month,agendaWeek,agendaDay",
-                    right: ""
+
                 },
                 lazyFetching: true,
                 locale: "fr",
                 navLinks: true,
+                editable: true,
+                eventDurationEditable: true,
+                eventColor: '#806233',
+                buttonText: {
+                    today:    "Aujourdh'ui",
+                    month:    'mois',
+                    week:     'semaine',
+                    day:      'jour',
+                    list:     'liste'
+
+                },
+
             });
+
 
         })
 

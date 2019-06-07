@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89818444-4ec1-4d94-8667-5573200c1b6d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/events/calendar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/FullCalendarListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Haduift.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Haduift.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/events/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/events/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/events/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/events/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/events/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/events/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/events/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/events/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Events.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Events.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/EventsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/EventsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Tests/Controller/EventsControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Tests/Controller/EventsControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Events.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="736">
-              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+              <caret line="123" selection-start-line="123" selection-end-line="123" />
               <folding>
                 <element signature="e#35#69#0#PHP" expanded="true" />
               </folding>
@@ -54,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/FullCalendarListener.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
-              <caret line="38" column="79" selection-start-line="38" selection-start-column="79" selection-end-line="38" selection-end-column="79" />
+              <caret line="38" column="93" selection-start-line="38" selection-start-column="93" selection-end-line="38" selection-end-column="93" />
               <folding>
                 <element signature="e#6#86#0#PHP" expanded="true" />
                 <element signature="e#124#164#0#PHP" expanded="true" />
@@ -76,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/events/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+            <state relative-caret-position="166">
+              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -141,9 +124,9 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/events/calendar.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/events/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Events.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/EventListener/FullCalendarListener.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/events/index.html.twig" />
       </list>
     </option>
   </component>
@@ -328,12 +311,12 @@
       <workItem from="1559788049808" duration="2495000" />
       <workItem from="1559842990550" duration="2101000" />
       <workItem from="1559860658594" duration="432000" />
-      <workItem from="1559912647724" duration="5061000" />
+      <workItem from="1559912647724" duration="6719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25042000" />
+    <option name="totallyTimeSpent" value="26700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -604,17 +587,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/events/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Events.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
           <folding>
             <element signature="e#35#69#0#PHP" expanded="true" />
           </folding>
@@ -624,11 +600,18 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/EventListener/FullCalendarListener.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
-          <caret line="38" column="79" selection-start-line="38" selection-start-column="79" selection-end-line="38" selection-end-column="79" />
+          <caret line="38" column="93" selection-start-line="38" selection-start-column="93" selection-end-line="38" selection-end-column="93" />
           <folding>
             <element signature="e#6#86#0#PHP" expanded="true" />
             <element signature="e#124#164#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/events/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
         </state>
       </provider>
     </entry>

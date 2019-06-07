@@ -30,7 +30,14 @@ class EventsController extends Controller
             'events' => $events,
         ));
     }
-
+    /**
+     *
+     * @Route("/clander", name="events_calendar")
+     */
+    public function Calendar()
+    {
+        return $this->render('events/calendar.html.twig');
+    }
     /**
      * Creates a new event entity.
      *
@@ -76,7 +83,7 @@ class EventsController extends Controller
     /**
      * Displays a form to edit an existing event entity.
      *
-     * @Route("/{id}/edit", name="events_edit")
+     * @Route("/edit/{id}", name="events_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Events $event)
@@ -101,7 +108,7 @@ class EventsController extends Controller
     /**
      * Deletes a event entity.
      *
-     * @Route("/{id}", name="events_delete")
+     * @Route("/delete/{id}", name="events_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Events $event)
@@ -133,4 +140,6 @@ class EventsController extends Controller
             ->getForm()
         ;
     }
+
+
 }

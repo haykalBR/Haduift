@@ -21,13 +21,20 @@ class Events
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="beginDate", type="date")
+     */
+    private $beginDate;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_at", type="datetime")
+     * @ORM\Column(name="endDate", type="date")
      */
-    private $dateAt;
+    private $endDate;
+
     /**
      * @var string
      *
@@ -50,21 +57,6 @@ class Events
         return $this->id;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getDateAt()
-    {
-        return $this->dateAt;
-    }
-
-    /**
-     * @param \DateTime $dateAt
-     */
-    public function setDateAt($dateAt)
-    {
-        $this->dateAt = $dateAt;
-    }
 
     /**
      * @return string
@@ -97,6 +89,42 @@ class Events
     {
         $this->servers = $servers;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getBeginDate()
+    {
+        return $this->beginDate;
+    }
+
+    /**
+     * @param \DateTime $beginDate
+     */
+    public function setBeginDate($beginDate)
+    {
+        $this->beginDate = $beginDate;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->endDate;
+    }
+
+    /**
+     * @param \DateTime $endDate
+     */
+    public function setEndDate($endDate)
+    {
+        $this->endDate = $endDate;
+    }
+
+
+
+
     
 }
 

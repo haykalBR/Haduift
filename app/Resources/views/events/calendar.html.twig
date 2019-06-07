@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
+
+
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-calendar"></i> List Events</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                {% include '@FullCalendar/Calendar/calendar.html.twig' %}
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+   {% block javascripts %}
+       <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+<script>
+    $(document).ready(d=function () {
+        $("#calendar-holder").fullCalendar({
+
+            eventSources: [
+                {
+                    url: "{{ path('fullcalendar_load_events') }}",
+                    type: "POST",
+                    data: {
+                        filters: {},
+                    },
+                    error: function () {
+                        // alert("There was an error while fetching FullCalendar!");
+                    }
+                }
+            ],
+            header: {
+                center: "title",
+                left: "prev,next today",
+                // right: "month,agendaWeek,agendaDay"
+                right: ""
+            },
+            lazyFetching: true,
+            locale: "fr",
+            navLinks: true, // can click day/week names to navigate views
+        });
+
+    })
+
+
+</script>
+   {% endblock %}

@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
+
+
     <div class="app-title">
         <div>
             <h1><i class="fa fa-calendar"></i> List Events</h1>
@@ -8,31 +11,10 @@
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Date AT </th>
-                        <th>Server </th>
-                        <th>Commande </th>
-                        <th>Actions </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for event in events %}
-                        <tr>
-                            <td>{{ event.id }}</td>
-                            <td>{% if event.dateAt %}{{ event.dateAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                            <td>{{ event.servers.name }}</td>
-                            <td>{{ event.action }}</td>
-                            <td>
+                {% include '@FullCalendar/Calendar/calendar.html.twig' %}
 
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
             </div>
+
         </div>
     </div>
 
@@ -41,5 +23,40 @@
    {% block javascripts %}
        <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+       <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+       <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+    <script>
+        $(document).ready(d=function () {
+            $("#calendar-holder").fullCalendar({
 
+                eventSources: [
+                    {
+                        url: "{{ path('fullcalendar_load_events') }}",
+                        type: "POST",
+                        data: {
+                            filters: {},
+                        },
+                        error: function () {
+                            // alert("There was an error while fetching FullCalendar!");
+                        }
+                    }
+                ],
+                header: {
+                    center: "title",
+                    left: "prev,next today",
+                    right: "month,agendaWeek,agendaDay",
+                    right: ""
+                },
+                lazyFetching: true,
+                locale: "fr",
+                navLinks: true,
+            });
+
+        })
+
+
+    </script>
    {% endblock %}

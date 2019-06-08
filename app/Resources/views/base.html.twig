@@ -78,7 +78,12 @@
              {% endif %}
             <div>
                 <p class="app-sidebar__user-name">{{ app.user.firstName }}  {{ app.user.lastName }} </p>
-                <p class="app-sidebar__user-designation">Frontend Developer</p>
+                <p class="app-sidebar__user-designation">
+                    {% if is_granted('ROLE_ADMIN') %} Administrateur systeme  {% else %} It support {% endif %}
+
+
+
+                </p>
             </div>
         </div>
         <ul class="app-menu">

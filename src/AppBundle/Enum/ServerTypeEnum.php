@@ -7,12 +7,14 @@ abstract class ServerTypeEnum
 {
     const TYPE_Monitoring = 'Monitoring';
     const TYPE_Scanner = 'Scanner';
+    const TYPE_Ids = 'IDS';
 
 
     /** @var array user friendly named type */
     protected static $typeName = [
         self::TYPE_Monitoring => 'Monitoring Server',
         self::TYPE_Scanner => 'Scanner Server',
+        self::TYPE_Ids => 'IDS Server',
     ];
 
     /**
@@ -37,6 +39,7 @@ abstract class ServerTypeEnum
         return [
             self::TYPE_Monitoring,
             self::TYPE_Scanner,
+            self::TYPE_Ids,
 
         ];
     }

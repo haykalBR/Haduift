@@ -26,7 +26,11 @@
                             <td>
                                 <a href="{{ path('servers_delete', { 'id': server.id }) }} " class="btn btn-danger">Delete</a>
                                 <a href="{{ path('servers_edit', { 'id': server.id }) }}" class="btn btn-warning">Edit</a>
-                                <a href="{{ path('servers_show', { 'id': server.id }) }}" class="btn btn-warning">Interface</a>
+                                {% if  server.type=="IDS" %}
+                                    <a href="{{ path('servers_rules', { 'id': server.id }) }}" class="btn btn-warning">Add RULES</a>
+                                {% else  %}
+                                        <a href="{{ path('servers_show', { 'id': server.id }) }}" class="btn btn-warning">Interface</a>
+                                {% endif %}
                                 <button class="btn btn-warning restart"  data-id="{{  server.id  }}">Restart</button>
                             </td>
                         </tr>

@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Ob\HighchartsBundle\Highcharts\Highchart;
 
 class DefaultController extends Controller
 {
@@ -13,9 +14,28 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $em = $this->getDoctrine()->getManager();
+
+
+        $monitoring = count($em->getRepository('AppBundle:Servers')->findBy(array('type'=> "Monitoring")));
+        $scanner = count($em->getRepository('AppBundle:Servers')->findBy(array('type'=> "Scanner")));
+        $ids = count($em->getRepository('AppBundle:Servers')->findBy(array('type'=> "IDS")));
+
+
+        $ob = new Highchart();
+        $ob->chart->renderTo('linechart');
+        $ob->title->text('Servers');
+
+
+        $data = array(
+            array('Monitoring', $monitoring),
+            array('Scanner', $scanner),
+            array('Refuse', $ids),
+        );
+        $ob->series(array(array('type' => 'pie', 'data' => $data)));
+
+        return $this->render('default/index.html.twig', array(
+            'chart' => $ob
+        ));
     }
 }

@@ -112,7 +112,7 @@ class ServersController extends Controller
 
     }
     /**
-     * Deletes a user entity.
+     * Restart a Server entity.
      *
      * @Route("/restart/{id}", name="servers_restart",options={"expose"=true})
      */
@@ -130,4 +130,32 @@ class ServersController extends Controller
         }
       return new JsonResponse('ok');
     }
+
+    /**
+     * AddROLES a Server entity.
+     *
+     * @Route("/rules/{id}", name="servers_rules")
+     */
+    public function AddRoles(Request $request,Servers $servers)
+    {
+        if ($request->isMethod('post')){
+            $rule=$request->get('rules');
+            $connection = new SSH2($servers->getIp(), $servers->getSshPort());
+            try {
+                $connection->login($servers->getSshUser(), $servers->getSshPassword());
+            } catch (\Exception $e) {
+              echo $e->getMessage();
+            }
+
+            if ($connection->isConnected()) {
+                $connection->exec('sudo echo "'. $rule .'" >>/etc/snort/rules/local.rules');
+
+            }
+            return $this->redirectToRoute('servers_index');
+        }
+
+        return $this->render('servers/roles.html.twig',['server'=>$servers]);
+    }
+
+
 }

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-user"></i> Create Server</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <form action="{{ path('servers_rules', { 'id': server.id }) }}" method="post">
+                    <label>RULE </label>
+                    <input type="text" class="form-control" name="rules">
+                    <br>
+                    <input type="submit" value="Add Roles" class="btn btn-info btn-lg" />
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

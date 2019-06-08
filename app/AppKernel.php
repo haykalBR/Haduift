@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Toiba\FullCalendarBundle\FullCalendarBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
 
 
         ];

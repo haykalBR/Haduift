@@ -90,6 +90,7 @@ class EventsController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $event->setStatus(false);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('events_edit', array('id' => $event->getId()));

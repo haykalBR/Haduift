@@ -28,32 +28,31 @@ Class ServerCommand extends ContainerAwareCommand{
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $em = $this->getContainer()->get('doctrine')->getManager();
-        $events = $em->getRepository('AppBundle:Events')->findby(['status'=>false]);
-        $date= new \DateTime();
-        foreach ( $events as $event){
-            if ($date>$event->getBeginDate()){
+        while (true) {
+            $events = $em->getRepository('AppBundle:Events')->findby(['status'=>false]);
+            $date= new \DateTime();
+            foreach ( $events as $event){
+                if ($date>$event->getBeginDate()){
 
-                $connection = new SSH2($event->getServers()->getIp(), $event->getServers()->getSshPort());
-                try {
-                    $connection->login($event->getServers()->getSshUser(), $event->getServers()->getSshPassword());
-                } catch (\Exception $e) {
-                    //echo $e->getMessage();
-                }
-                if ($connection->isConnected()) {
-                    $connection->exec($event->getAction());
+                    $connection = new SSH2($event->getServers()->getIp(), $event->getServers()->getSshPort());
+                    try {
+                        $connection->login($event->getServers()->getSshUser(), $event->getServers()->getSshPassword());
+                    } catch (\Exception $e) {
+                        $output->writeln('Erreur has accured when attempting to connect to '. $event->getServers()->getName());
 
+                    }
+                    if ($connection->isConnected()) {
+                        $connection->exec($event->getAction());
+
+                    }
+                    $event->setStatus(true);
+                    $em->flush();
                 }
-                $event->setStatus(true);
-                $em->flush();
             }
         }
+        sleep(10);
 
     }
-
-
-
-
-
 
 
 }

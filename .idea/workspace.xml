@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89818444-4ec1-4d94-8667-5573200c1b6d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/servers/roles.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Haduift.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Haduift.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/servers/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/servers/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ServersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ServersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Enum/ServerTypeEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Enum/ServerTypeEnum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/sessions/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Command/ServerCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Command/ServerCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -58,6 +46,48 @@
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerCommand.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Command/ServerCommand.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="e#116#167#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Servers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Servers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1002">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServersController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ServersController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
+              <folding>
+                <element signature="e#40#69#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="92" column="37" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -106,7 +136,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/events/calendar.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/EventListener/FullCalendarListener.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/EventsType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/events/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/events/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ServersType.php" />
@@ -114,16 +143,17 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Servers.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Events.php" />
         <option value="$PROJECT_DIR$/builder/WebServers.sh" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Command/ServerCommand.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/events/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Enum/ServerTypeEnum.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/servers/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/servers/roles.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ServersController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Command/ServerCommand.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ServersController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php" />
       </list>
     </option>
   </component>
@@ -233,14 +263,6 @@
             <path>
               <item name="Haduift" type="b2602c69:ProjectViewProjectNode" />
               <item name="Haduift" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="events" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Haduift" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Haduift" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -248,6 +270,13 @@
               <item name="Haduift" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Haduift" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Haduift" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="AppBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Command" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Haduift" type="b2602c69:ProjectViewProjectNode" />
@@ -310,12 +339,12 @@
       <workItem from="1559842990550" duration="2101000" />
       <workItem from="1559860658594" duration="432000" />
       <workItem from="1559912647724" duration="6719000" />
-      <workItem from="1560030767108" duration="5560000" />
+      <workItem from="1560030767108" duration="6882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48738000" />
+    <option name="totallyTimeSpent" value="50060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -579,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="83" column="45" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/servers/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -593,27 +615,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Servers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/builder/WebServers.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Command/ServerCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="e#116#167#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -662,16 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ServersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
-          <folding>
-            <element signature="e#40#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -717,6 +712,40 @@
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Command/ServerCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#116#167#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Servers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1002">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ServersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+          <folding>
+            <element signature="e#40#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/EventsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="92" column="37" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
         </state>
       </provider>
     </entry>
